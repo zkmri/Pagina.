@@ -1,0 +1,351 @@
+:root {
+  --primary-color: rgb(74, 144, 226);
+  --secondary-color: rgb(92, 184, 92);
+  --danger-color: rgb(75, 44, 30);
+  --text-color: rgb(0, 0, 0);
+  --light-bg: rgb(245, 245, 245);
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-bg);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.emergency-banner {
+  background-color: var(--danger-color);
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  width: 100vw;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-bottom: 2rem;
+  margin-right: -50vw;
+  margin-left: -50vw;
+}
+
+.emergency-banner a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+  margin-top: 1rem;
+}
+
+.card ul li {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.form-container {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.form-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-row label {
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-row button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  border-bottom: 2px solid var(--light-bg);
+  padding-bottom: 0.5rem;
+}
+
+.emotion-tracker {
+  text-align: center;
+  width: 100%;
+}
+
+.emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.emotion-grid div {
+  padding: 1rem;
+  background: var(--light-bg);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.emotion-grid div:hover {
+  transform: scale(1.05);
+  background: var(--primary-color);
+  color: white;
+}
+
+.emotion-grid div.selected {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: var(--box-shadow);
+}
+
+footer {
+  text-align: center;
+  padding: 2.12rem 1rem;
+  background: rgb(44, 62, 80);
+  margin-top: 2rem;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  word-wrap: break-word;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: white;
+  box-shadow: var(--box-shadow);
+  transform: translateX(120%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  width: 90%;
+  max-width: 300px;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.notification.error {
+  background: var(--danger-color);
+  color: white;
+}
+
+.notification.info {
+  background: var(--primary-color);
+  color: white;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.emergency-banner.pulse {
+  animation: pulse 1s ease-in-out;
+}
+
+.card canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-row label {
+    width: 150px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    flex: 1;
+  }
+
+  .form-row button {
+    width: auto;
+    margin-left: 160px;
+  }
+
+  .emotion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .emotion-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-row button {
+    width: 250px;
+  }
+
+  .notification {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .emotion-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .emotion-grid div {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    font-size: 16px; 
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .emergency-banner {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  footer a {
+    font-size: 0.9rem;
+  }
+}

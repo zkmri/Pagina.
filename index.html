@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espacio Seguro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="emergency-banner">
+        ¿Necesitas ayuda inmediata? Comunícate con nosotros:
+        <a href="tel:3185567143">318 556 7143</a>
+    </div>
+
+    <div class="container">
+        <h1>Espacio Seguro</h1>
+        <p class="subtitle">Un lugar seguro para compartir y encontrar apoyo</p>
+        
+        <div class="card">
+            <h3>Solicitudes de Apoyo por Día</h3>
+            <div style="height: 400px; position: relative;">
+                <canvas id="requestsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+    <h3>Tips para la Salud Mental</h3>
+    <ul>
+        <li><a href="https://www.unobravo.com/es/blog/tecnicas-de-relajacion" target="_blank">Practica la meditación o ejercicios de respiración.</a></li>
+        <li><a href="https://medlineplus.gov/spanish/ency/patientinstructions/000757.htm#:~:text=V%C3%A1yase%20a%20la%20cama%20m%C3%A1s,antes%20de%20irse%20a%20dormir." target="_blank">Mantén una rutina de sueño regular.</a></li>
+        <li><a href="https://www.clinicasanpablo.co/educando/hablemos-de-salud-mental/es-tiempo-de-hablar-de-tu-salud-mental" target="_blank">Habla con alguien en quien confíes sobre tus emociones.</a></li>
+        <li><a href="https://redsanamente.org/la-importancia-del-ocio-y-el-tiempo-libre-para-la-salud-mental/" target="_blank">Dedica tiempo a actividades que disfrutes.</a></li>
+        <li><a href="https://www.uoc.edu/es/news/2023/165-crece-tendencia-evitar-malas-noticias" target="_blank">Evita la sobrecarga de información negativa.</a></li>
+    </ul>
+</div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Seguimiento del Estado de Ánimo</h3>
+                <div class="emotion-tracker">
+                    <p>¿Cómo te sientes hoy?</p>
+                    <div class="emotion-grid">
+                        <div>😊 Muy bien</div>
+                        <div>🙂 Bien</div>
+                        <div>😐 Normal</div>
+                        <div>😔 Triste</div>
+                        <div>😰 Ansioso</div>
+                        <div>😫 Agotado</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Solicitar Apoyo</h3>
+                <div class="form-container">
+                    <form id="supportForm">
+                        <div class="form-row">
+                            <label>Nombre:</label>
+                            <input type="text" name="name" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Correo electrónico:</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label>Género:</label>
+                            <select name="gender" required>
+                                <option value="">Selecciona tu género</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="prefiero-no-decir">Prefiero no decir</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Tipo de apoyo:</label>
+                            <select name="supportType" required>
+                                <option value="">Tipo de apoyo que necesitas</option>
+                                <option value="voluntario">Conversación con un voluntario</option>
+                                <option value="profesional">Contacto con profesional</option>
+                                <option value="informacion">Información general</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Cuéntanos tu situación:</label>
+                            <textarea name="problem" required rows="4"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <button type="submit">Enviar Solicitud</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            © 2024 EspacioSeguro - Un proyecto para el bienestar emocional
+            <br>
+            Línea de emergencia: <a href="tel:3185567143">318 556 7143</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
